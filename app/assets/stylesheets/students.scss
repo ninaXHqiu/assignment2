@@ -4,15 +4,51 @@
 
 body{
     background-color: #dfedfc;
+    text-align: center;
 }
 
 table{
-    width: 90%;
+    width: 95%;
+    margin: 2.5%;
     text-align: center;
     border-collapse: collapse;
-    border: 1px solid black;
+    table-layout: fixed;
 }
 
 th{
-    border-bottom: 1px solid black;
+    border-bottom: 3px solid red;
+}
+th, td{
+    font-size: 16px;
+    padding: 1%;
+}
+
+button{
+    border: none;
+    border-radius: 4px;
+    background-color: white;
+    padding: 1%;
+    margin: 1%;
+    width: 100%;
+    font-size: 16px;
+}
+
+.new{
+    background-color: aquamarine;
+    width: 95%;
+}
+
+.edit{
+    background-color: aquamarine;
+    width: 30%;
+}
+
+button.form{
+    margin: 1% 1% 0;
+    width: 95%;
+}
+
+p, div{
+    font-size: 16px;
+    margin: 2%;
 }
