@@ -1,10 +1,19 @@
 <br/><h1>Displaying Students</h1>
 
-<% @students.each do |student| %>
+<% @students.each_with_index do |student,i| %>
   <div class="disp" style="border:2px solid <%= student.color %>; width:<%= student.weight %>px; height:<%= student.height * 3 %>px;";>
-    <br>Name: <font color="<%= student.color %>"><%= student.name %></font>
-    <br>GPA: <%= student.gpa %>
-    <!--<br>GPA rank is < %= %>-->
+    <br>Student <%= i+1 %><br>
+    Name: <font color="<%= student.color %>"><%= student.name %></font><br>
+    <% if student.gpa <= 1 %>
+        <font color="red"> Angry GPA <%= student.gpa %></font>
+    <% elsif student.gpa <= 2.5 %>
+        <font color="orange"> :( Sad GPA <%= student.gpa %></font>
+    <% elsif student.gpa <= 4 %>
+        <font color="green"> :) Happy GPA <%= student.gpa %></font>
+    <% else %>
+        <font> GPA ?_? <%= student.gpa %></font>
+    <% end %>
+
   </div>
 <% end %>
 
