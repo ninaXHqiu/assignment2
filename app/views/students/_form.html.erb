@@ -11,27 +11,29 @@
     </div>
   <% end %>
 
+  <font color="red">All fields are required</font>
   <div class="field">
     <strong><%= f.label :name %></strong>
-    <%= f.text_field :name %>
+    <%= f.text_field :name, :required => true %>
   </div>
   <div class="field">
     <strong><%= f.label :weight %></strong>
-    <%= f.number_field :weight %>
+    <%= f.number_field :weight, :required => true %>
   </div>
   <div class="field">
     <strong><%= f.label :height %></strong>
-    <%= f.number_field :height %>
+    <%= f.number_field :height, :required => true %>
   </div>
   <div class="field">
     <strong><%= f.label :color %></strong>
-    <%= f.text_field :color %>
+    <%= f.text_field :color, :required => true %>
 
   </div>
   <div class="field">
     <strong><%= f.label :gpa %></strong>
-    <%= f.text_field :gpa %>
+    <%= f.text_field :gpa, :required => true %>
   </div>
+
   <button class="form">
     Done
   </button>
