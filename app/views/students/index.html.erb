@@ -5,6 +5,7 @@
 <table>
   <thead>
     <tr>
+      <th></th>
       <th>Name</th>
       <th>Weight</th>
       <th>Height</th>
@@ -15,8 +16,9 @@
   </thead>
 
   <tbody>
-    <% @students.each do |student| %>
+    <% @students.each_with_index do |student, i| %>
       <tr>
+        <td><%= (i + 1) %></td>
         <td><%= student.name %></td>
         <td><%= student.weight %></td>
         <td><%= student.height %></td>
@@ -31,4 +33,13 @@
 </table>
 
 <%= link_to '<button class="new">New Student</button>'.html_safe, new_student_path %>
-<button class="form">Display</button>
+<!--<button class="form">Display</button><br>-->
+<%= link_to '<button class="form">Display</button>'.html_safe, { :action => "display" }, :method => :get %>
+
+
+<% @students.each do |student| %>
+  <div width="<%= student.weight %>" height="<%= student.height %>" style="border:2px solid <%= student.color %>;">
+    <br>Name: <font color="<%= student.color %>"><%= student.name %></font>
+    <br>GPA: <%= student.gpa %>
+  </div>
+<% end %>

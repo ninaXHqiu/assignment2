@@ -1,0 +1,10 @@
+<br/><h1>Displaying Students</h1>
+
+<% @students.each do |student| %>
+  <div width="<%= student.weight %>" height="<%= student.height %>" style="border:2px solid <%= student.color %>;">
+    <br>Name: <font color="<%= student.color %>"><%= student.name %></font>
+    <br>GPA: <%= student.gpa %>
+  </div>
+<% end %>
+
+<%= link_to '<button class="new">Back</button>'.html_safe, students_path %>
