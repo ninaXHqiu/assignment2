@@ -1,7 +1,7 @@
 <br/><h1>Displaying Students</h1>
 
 <% @students.each_with_index do |student,i| %>
-  <div class="disp" style="border:2px solid <%= student.color %>; width:<%= student.weight %>px; height:<%= student.height * 3 %>px;";>
+  <div style="border:2px solid <%= student.color %>; width:<%= student.weight %>px; height:<%= student.height * 3 %>px; display: inline-block;";>
     <br>Student <%= i+1 %><br>
     Name: <font color="<%= student.color %>"><%= student.name %></font><br>
     <% if student.gpa <= 1 %>
